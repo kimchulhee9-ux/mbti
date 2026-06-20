@@ -7,6 +7,7 @@ function StartScreen({ onStart }) {
       <div className="title-container">
         <h1>나의 진짜 모습은?</h1>
         <p className="subtitle">심플하고 정확한 MBTI 성격 유형 검사</p>
+        <p className="creator-text">- chulhee -</p>
       </div>
       
       <div className="illustration">
