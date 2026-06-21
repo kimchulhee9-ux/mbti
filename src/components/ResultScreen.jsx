@@ -45,7 +45,32 @@ function ResultScreen({ resultType, scores, onRestart }) {
             ))}
           </ul>
         </div>
+
+        {resultData.jobTraits && (
+          <div className="job-traits-section">
+            <h3>💼 선호하는 직업특성</h3>
+            <ul>
+              {resultData.jobTraits.map((trait, index) => (
+                <li key={index}>{trait}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
+
+      {resultData.futureCareers && (
+        <div className="future-careers-section">
+          <h3>🚀 미래 추천 직업</h3>
+          <div className="careers-grid">
+            {resultData.futureCareers.map((career, index) => (
+              <div key={index} className="career-card">
+                <span className="career-icon">{career.icon}</span>
+                <span className="career-name">{career.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="match-container">
         <div className="match-box good-match">

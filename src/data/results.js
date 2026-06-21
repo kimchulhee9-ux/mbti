@@ -7,7 +7,18 @@ export const results = {
       "보수적인 성향이 있으며 전통을 중시합니다.",
       "디테일에 강하고 꼼꼼합니다."
     ],
-    color: "#4A90E2", // Blue
+    jobTraits: [
+      "체계적이고 규칙이 명확한 환경을 선호합니다.",
+      "장기 프로젝트와 반복 가능한 업무에서 능력을 발휘합니다.",
+      "데이터와 사실을 기반으로 결정을 내립니다."
+    ],
+    futureCareers: [
+      { name: "AI 데이터 품질 관리자", icon: "🤖" },
+      { name: "사이버보안 전문가", icon: "🔐" },
+      { name: "스마트시티 인프라 엔지니어", icon: "🏙️" },
+      { name: "디지털 법무·컴플라이언스 전문가", icon: "⚖️" }
+    ],
+    color: "#4A90E2",
     goodMatch: "ESFP",
     badMatch: "INFP"
   },
@@ -19,7 +30,18 @@ export const results = {
       "갈등을 싫어하며 조화로운 관계를 원합니다.",
       "안정적이고 예측 가능한 환경을 선호합니다."
     ],
-    color: "#50E3C2", // Teal
+    jobTraits: [
+      "팀원을 돕고 지원하는 역할에 강합니다.",
+      "세심한 배려가 필요한 서비스직에서 탁월합니다.",
+      "안정적인 조직 문화와 명확한 역할 분담을 선호합니다."
+    ],
+    futureCareers: [
+      { name: "디지털 헬스케어 코디네이터", icon: "🏥" },
+      { name: "노인복지·케어 로봇 운영 전문가", icon: "🤝" },
+      { name: "심리상담 치료사", icon: "🧠" },
+      { name: "사용자 경험(UX) 리서처", icon: "🔍" }
+    ],
+    color: "#50E3C2",
     goodMatch: "ESTP",
     badMatch: "ENTP"
   },
@@ -31,7 +53,18 @@ export const results = {
       "이상주의적이며 완벽을 추구하는 성향이 있습니다.",
       "혼자만의 시간이 매우 중요합니다."
     ],
-    color: "#9013FE", // Purple
+    jobTraits: [
+      "의미 있는 목표를 위해 일하는 것을 중요시합니다.",
+      "사람들의 내면 성장을 돕는 일에 보람을 느낍니다.",
+      "창의적이고 비전 있는 프로젝트에 몰입합니다."
+    ],
+    futureCareers: [
+      { name: "AI 윤리 연구원", icon: "🧭" },
+      { name: "정신건강 전문 상담사", icon: "💬" },
+      { name: "사회혁신 기획자", icon: "🌱" },
+      { name: "인간중심 AI 디자이너", icon: "✨" }
+    ],
+    color: "#9013FE",
     goodMatch: "ENFP",
     badMatch: "ESTJ"
   },
@@ -43,7 +76,18 @@ export const results = {
       "새로운 아이디어에 호기심이 많습니다.",
       "감정 표현이 서툴 수 있습니다."
     ],
-    color: "#2C3E50", // Dark Blue
+    jobTraits: [
+      "장기적 전략과 시스템 설계에 능숙합니다.",
+      "자율적으로 일하며 높은 기준을 스스로 설정합니다.",
+      "복잡한 문제를 구조적으로 분석하는 것을 즐깁니다."
+    ],
+    futureCareers: [
+      { name: "AI·머신러닝 연구원", icon: "🧬" },
+      { name: "퀀트 애널리스트", icon: "📊" },
+      { name: "우주 탐사 엔지니어", icon: "🚀" },
+      { name: "전략 컨설턴트", icon: "♟️" }
+    ],
+    color: "#2C3E50",
     goodMatch: "ENFP",
     badMatch: "ESFJ"
   },
@@ -55,7 +99,18 @@ export const results = {
       "위기 상황에서 침착하게 대처합니다.",
       "간섭받는 것을 매우 싫어합니다."
     ],
-    color: "#95A5A6", // Gray
+    jobTraits: [
+      "실용적이고 즉각적인 문제 해결을 선호합니다.",
+      "독립적으로 작업하며 기술적 도전을 즐깁니다.",
+      "결과물이 명확한 프로젝트에서 능력을 발휘합니다."
+    ],
+    futureCareers: [
+      { name: "로보틱스 엔지니어", icon: "🦾" },
+      { name: "드론 조종·정비 전문가", icon: "🚁" },
+      { name: "사이버포렌식 전문가", icon: "🔎" },
+      { name: "자율주행 시스템 개발자", icon: "🚗" }
+    ],
+    color: "#95A5A6",
     goodMatch: "ESFJ",
     badMatch: "INFP"
   },
@@ -67,7 +122,18 @@ export const results = {
       "예술적인 감각이 뛰어날 때가 많습니다.",
       "다툼을 피하고 양보를 잘합니다."
     ],
-    color: "#F5A623", // Orange
+    jobTraits: [
+      "자유롭고 유연한 근무 환경을 선호합니다.",
+      "감성과 미적 감각이 요구되는 일에서 빛납니다.",
+      "사람과 직접 소통하며 돕는 역할을 즐깁니다."
+    ],
+    futureCareers: [
+      { name: "디지털 아트·NFT 창작가", icon: "🎨" },
+      { name: "메타버스 공간 디자이너", icon: "🌐" },
+      { name: "웰니스·힐링 콘텐츠 크리에이터", icon: "🧘" },
+      { name: "동물 복지 전문가", icon: "🐾" }
+    ],
+    color: "#F5A623",
     goodMatch: "ENFJ",
     badMatch: "ENTJ"
   },
@@ -79,7 +145,18 @@ export const results = {
       "타인의 감정에 깊이 공감합니다.",
       "몽상가적 기질이 있습니다."
     ],
-    color: "#E74C3C", // Red
+    jobTraits: [
+      "자신의 가치관과 일치하는 일에서 최고 성과를 냅니다.",
+      "창작·글쓰기·예술 등 자기표현이 가능한 분야를 선호합니다.",
+      "경쟁보다는 협력적이고 인간적인 환경을 원합니다."
+    ],
+    futureCareers: [
+      { name: "AI 스토리텔러·작가", icon: "✍️" },
+      { name: "사회적 기업 창업가", icon: "🌍" },
+      { name: "감성 AI 개발자", icon: "💡" },
+      { name: "심리·상담 치료사", icon: "🫶" }
+    ],
+    color: "#E74C3C",
     goodMatch: "ENFJ",
     badMatch: "ESTJ"
   },
@@ -91,7 +168,18 @@ export const results = {
       "논리적이지 않은 것에 답답함을 느낍니다.",
       "지식 탐구에 열정적입니다."
     ],
-    color: "#34495E", // Dark Slate
+    jobTraits: [
+      "이론과 모델을 구축하는 지적인 작업을 즐깁니다.",
+      "틀에 얽매이지 않는 자유로운 환경에서 창의성이 발휘됩니다.",
+      "복잡한 시스템을 분석하고 최적화하는 것을 좋아합니다."
+    ],
+    futureCareers: [
+      { name: "양자컴퓨팅 연구원", icon: "⚛️" },
+      { name: "바이오인포매틱스 전문가", icon: "🧬" },
+      { name: "게임 AI 설계자", icon: "🎮" },
+      { name: "철학·AI 융합 연구자", icon: "🔭" }
+    ],
+    color: "#34495E",
     goodMatch: "ENTJ",
     badMatch: "ESFJ"
   },
@@ -103,7 +191,18 @@ export const results = {
       "임기응변이 뛰어나고 적응력이 좋습니다.",
       "눈치가 빠르고 현실적입니다."
     ],
-    color: "#E67E22", // Pumpkin
+    jobTraits: [
+      "빠른 변화와 역동적인 환경에서 에너지가 넘칩니다.",
+      "즉각적인 결과와 피드백을 선호합니다.",
+      "사람들과 직접 교류하며 협상·설득하는 일을 잘합니다."
+    ],
+    futureCareers: [
+      { name: "스타트업 창업가·엑셀러레이터", icon: "🚀" },
+      { name: "라이브커머스·디지털 세일즈 전문가", icon: "📱" },
+      { name: "스포츠 에이전트·이벤트 기획자", icon: "🏆" },
+      { name: "위기관리 컨설턴트", icon: "⚡" }
+    ],
+    color: "#E67E22",
     goodMatch: "ISFJ",
     badMatch: "INFP"
   },
@@ -115,7 +214,18 @@ export const results = {
       "에너지가 넘치고 긍정적입니다.",
       "지루함을 잘 견디지 못합니다."
     ],
-    color: "#F1C40F", // Yellow
+    jobTraits: [
+      "사람과 함께하는 활기찬 환경에서 최고의 성과를 냅니다.",
+      "즉흥적이고 유연하게 상황을 이끄는 능력이 뛰어납니다.",
+      "엔터테인먼트·공연·서비스 분야에 자연스럽게 어울립니다."
+    ],
+    futureCareers: [
+      { name: "버추얼 인플루언서·크리에이터", icon: "🌟" },
+      { name: "XR(확장현실) 체험 기획자", icon: "🥽" },
+      { name: "이벤트·웨딩 플래너", icon: "🎉" },
+      { name: "공연·엔터테인먼트 매니저", icon: "🎤" }
+    ],
+    color: "#F1C40F",
     goodMatch: "ISFJ",
     badMatch: "INTJ"
   },
@@ -127,7 +237,18 @@ export const results = {
       "새로운 아이디어가 끊임없이 떠오릅니다.",
       "반복적인 일상을 힘들어합니다."
     ],
-    color: "#1ABC9C", // Turquoise
+    jobTraits: [
+      "창의적 자유와 다양성이 보장되는 환경을 좋아합니다.",
+      "사람들과 협력하며 비전을 실현하는 일에 동기부여됩니다.",
+      "새로운 프로젝트를 시작하고 이끄는 역할에 적합합니다."
+    ],
+    futureCareers: [
+      { name: "소셜 임팩트 크리에이터", icon: "💥" },
+      { name: "브랜드 스토리텔링 디렉터", icon: "📣" },
+      { name: "교육 콘텐츠 개발자(에듀테크)", icon: "📚" },
+      { name: "커뮤니티 매니저", icon: "🤗" }
+    ],
+    color: "#1ABC9C",
     goodMatch: "INFJ",
     badMatch: "ISTJ"
   },
@@ -139,7 +260,18 @@ export const results = {
       "틀에 박힌 것을 싫어합니다.",
       "여러 분야에 다재다능합니다."
     ],
-    color: "#D35400", // Dark Orange
+    jobTraits: [
+      "혁신과 파괴적 아이디어를 실현하는 환경에서 빛납니다.",
+      "복잡한 문제에 새로운 해결책을 찾는 것을 즐깁니다.",
+      "자유롭게 의견을 나누고 논쟁할 수 있는 분위기를 선호합니다."
+    ],
+    futureCareers: [
+      { name: "테크 스타트업 창업가", icon: "💡" },
+      { name: "특허·IP 전략가", icon: "📜" },
+      { name: "프롬프트 엔지니어", icon: "🤖" },
+      { name: "벤처캐피털리스트", icon: "💰" }
+    ],
+    color: "#D35400",
     goodMatch: "INFJ",
     badMatch: "ISFJ"
   },
@@ -151,7 +283,18 @@ export const results = {
       "규칙과 규율을 중요하게 생각합니다.",
       "목표 지향적이고 추진력이 있습니다."
     ],
-    color: "#2980B9", // Belize Hole (Blue)
+    jobTraits: [
+      "명확한 목표와 체계적인 프로세스가 있는 환경에서 탁월합니다.",
+      "팀을 조직하고 계획대로 이끄는 리더십을 발휘합니다.",
+      "성과와 효율성을 중심으로 의사결정합니다."
+    ],
+    futureCareers: [
+      { name: "스마트 물류·SCM 매니저", icon: "📦" },
+      { name: "핀테크 프로젝트 매니저", icon: "💳" },
+      { name: "공공기관 디지털 전환 리더", icon: "🏛️" },
+      { name: "운영 최적화 컨설턴트", icon: "📈" }
+    ],
+    color: "#2980B9",
     goodMatch: "ISFP",
     badMatch: "INFP"
   },
@@ -163,7 +306,18 @@ export const results = {
       "눈치가 빠르고 타인의 감정을 잘 읽습니다.",
       "오지랖이 넓다는 소리를 가끔 듣습니다."
     ],
-    color: "#FF6B6B", // Coral Red
+    jobTraits: [
+      "사람들과 협력하고 조화를 이루는 환경에서 강점을 발휘합니다.",
+      "타인을 돌보고 지원하는 직무에서 보람을 느낍니다.",
+      "명확한 사회적 역할과 인정이 있는 직업을 선호합니다."
+    ],
+    futureCareers: [
+      { name: "헬스케어 커뮤니케이션 전문가", icon: "❤️" },
+      { name: "교육·복지 서비스 기획자", icon: "🏫" },
+      { name: "커뮤니티 헬스 코치", icon: "🤲" },
+      { name: "고객 성공 매니저(CS)", icon: "😊" }
+    ],
+    color: "#FF6B6B",
     goodMatch: "ISFP",
     badMatch: "INTP"
   },
@@ -175,7 +329,18 @@ export const results = {
       "타인의 잠재력을 발견하고 키워줍니다.",
       "눈치가 빠르고 배려심이 깊습니다."
     ],
-    color: "#8E44AD", // Wisteria (Purple)
+    jobTraits: [
+      "사람을 성장시키고 영감을 주는 역할에서 에너지를 얻습니다.",
+      "조직의 문화와 관계를 긍정적으로 변화시키는 것을 즐깁니다.",
+      "목적 있는 비전을 팀과 함께 실현하는 일을 좋아합니다."
+    ],
+    futureCareers: [
+      { name: "인재개발(HRD) 전문가", icon: "🌟" },
+      { name: "라이프·커리어 코치", icon: "🎯" },
+      { name: "사회변화 캠페인 리더", icon: "📢" },
+      { name: "에듀테크 프로그램 디렉터", icon: "🎓" }
+    ],
+    color: "#8E44AD",
     goodMatch: "INFP",
     badMatch: "ISTP"
   },
@@ -187,7 +352,18 @@ export const results = {
       "효율성과 성과를 매우 중요시합니다.",
       "장기적인 계획을 세우는 것을 좋아합니다."
     ],
-    color: "#C0392B", // Pomegranate
+    jobTraits: [
+      "큰 그림을 그리고 조직을 이끄는 전략적 리더십이 탁월합니다.",
+      "도전적인 목표와 빠른 성장 환경을 선호합니다.",
+      "복잡한 의사결정을 빠르고 과감하게 내립니다."
+    ],
+    futureCareers: [
+      { name: "AI 기업 CEO·경영전략가", icon: "👑" },
+      { name: "투자은행·M&A 전문가", icon: "🏦" },
+      { name: "글로벌 NGO 리더", icon: "🌏" },
+      { name: "테크 기업 CPO(최고제품책임자)", icon: "⚙️" }
+    ],
+    color: "#C0392B",
     goodMatch: "INTP",
     badMatch: "ISFJ"
   }
