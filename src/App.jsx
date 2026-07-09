@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import SplashScreen from './components/SplashScreen';
 import StartScreen from './components/StartScreen';
 import QuestionScreen from './components/QuestionScreen';
 import ResultScreen from './components/ResultScreen';
 import './App.css';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('start'); // 'start', 'question', 'result'
+  const [currentScreen, setCurrentScreen] = useState('splash'); // 'splash', 'start', 'question', 'result'
   const [scores, setScores] = useState({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
   const [finalScores, setFinalScores] = useState({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
   const [mbtiResult, setMbtiResult] = useState('');
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <div className="app-container">
+      {currentScreen === 'splash' && <SplashScreen onUnlock={() => setCurrentScreen('start')} />}
       {currentScreen === 'start' && <StartScreen onStart={startTest} />}
       {currentScreen === 'question' && (
         <QuestionScreen
