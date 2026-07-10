@@ -7,11 +7,13 @@ import './App.css';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState('splash'); // 'splash', 'start', 'question', 'result'
+  const [userName, setUserName] = useState('');
   const [scores, setScores] = useState({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
   const [finalScores, setFinalScores] = useState({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
   const [mbtiResult, setMbtiResult] = useState('');
 
-  const startTest = () => {
+  const startTest = (name) => {
+    setUserName(name);
     setScores({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
     setCurrentScreen('question');
   };
@@ -30,6 +32,7 @@ function App() {
   };
 
   const restartTest = () => {
+    setUserName('');
     setCurrentScreen('start');
   };
 
@@ -45,7 +48,12 @@ function App() {
         />
       )}
       {currentScreen === 'result' && (
-        <ResultScreen resultType={mbtiResult} scores={finalScores} onRestart={restartTest} />
+        <ResultScreen 
+          resultType={mbtiResult} 
+          scores={finalScores} 
+          onRestart={restartTest} 
+          userName={userName}
+        />
       )}
     </div>
   );

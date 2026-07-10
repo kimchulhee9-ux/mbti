@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './StartScreen.css';
 
 function StartScreen({ onStart }) {
+  const [name, setName] = useState('');
+  const [showWarning, setShowWarning] = useState(false);
+
+  const handleStartClick = () => {
+    const trimmedName = name.trim();
+    if (!trimmedName) {
+      setShowWarning(true);
+      return;
+    }
+    onStart(trimmedName);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleStartClick();
+    }
+  };
+
   return (
     <div className="start-screen fade-in">
       <div className="title-container">
@@ -16,12 +34,34 @@ function StartScreen({ onStart }) {
         <div className="circle circle-3"></div>
       </div>
 
+      <div className="name-input-container">
+        <label htmlFor="name-input" className="name-label">이름을 입력해주세요</label>
+        <input 
+          id="name-input"
+          type="text" 
+          className={`name-input ${showWarning && !name.trim() ? 'warning' : ''}`}
+          placeholder="예: 홍길동" 
+          value={name} 
+          onChange={(e) => {
+            setName(e.target.value);
+            if (e.target.value.trim()) {
+              setShowWarning(false);
+            }
+          }}
+          onKeyDown={handleKeyPress}
+          maxLength={10}
+        />
+        {showWarning && !name.trim() && (
+          <p className="warning-text">이름을 입력해야 테스트를 시작할 수 있습니다.</p>
+        )}
+      </div>
+
       <div className="info">
         <p>⏱ 소요 시간: 약 3분</p>
         <p>📝 총 40문항</p>
       </div>
 
-      <button className="start-button" onClick={onStart}>
+      <button className="start-button" onClick={handleStartClick}>
         검사 시작하기
       </button>
     </div>

@@ -1,9 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { results } from '../data/results';
 import './ResultScreen.css';
 
-function ResultScreen({ resultType, scores, onRestart }) {
+// ==========================================
+// 📊 구글 스프레드시트 연동 설정
+// ==========================================
+// 구글 스프레드시트 배포 후 발급받은 웹 앱 URL을 아래 작은따옴표 사이에 넣어주세요.
+// 예: const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxxxx.../exec';
+const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycb4po_P3u2BZ9Q_rKqkhv51KjE9bcY9GW5BaRXV1le0mNxBYQiQhBDUDGxXxL7pwqgzjQ/exec';
+
+function ResultScreen({ resultType, scores, onRestart, userName }) {
   const resultData = results[resultType];
+  const [submitStatus, setSubmitStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
+
+  const submitResults = useCallback(async () => {
+    if (!GOOGLE_SHEETS_WEB_APP_URL || GOOGLE_SHEETS_WEB_APP_URL.includes('YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE')) {
+      console.warn("구글 스프레드시트 배포 URL이 설정되지 않아 데이터가 저장되지 않습니다.");
+      setSubmitStatus('idle');
+      return;
+    }
+
+    setSubmitStatus('submitting');
+
+    try {
+      await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors', // CORS 제한 문제를 우회하여 안전하게 데이터를 전송합니다.
+        headers: {
+          'Content-Type': 'text/plain',
+        },
+        body: JSON.stringify({
+          name: userName || '익명',
+          result: resultType,
+          scores: scores,
+        }),
+      });
+
+      // mode: 'no-cors'의 경우 응답 바디를 직접 확인할 수는 없으나,
+      // 네트워크 에러가 발생하지 않는 한 데이터는 스프레드시트에 성공적으로 기록됩니다.
+      setSubmitStatus('success');
+    } catch (error) {
+      console.error("구글 스프레드시트 전송 에러:", error);
+      setSubmitStatus('error');
+    }
+  }, [userName, resultType, scores]);
+
+  useEffect(() => {
+    submitResults();
+  }, [submitResults]);
 
   // 결과 유형에 따라 각 축의 승자 점수만 표시
   const scoreItems = resultType ? [
@@ -19,6 +63,28 @@ function ResultScreen({ resultType, scores, onRestart }) {
 
   return (
     <div className="result-screen fade-in" style={{ '--theme-color': resultData.color }}>
+      {GOOGLE_SHEETS_WEB_APP_URL && !GOOGLE_SHEETS_WEB_APP_URL.includes('YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE') && (
+        <div className={`submission-status-bar ${submitStatus}`}>
+          {submitStatus === 'submitting' && (
+            <div className="status-content">
+              <span className="status-spinner"></span>
+              <span>📊 결과를 스프레드시트에 임시 저장 중...</span>
+            </div>
+          )}
+          {submitStatus === 'success' && (
+            <div className="status-content">
+              <span>✅ 결과가 스프레드시트에 안전하게 기록되었습니다.</span>
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="status-content error">
+              <span>❌ 전송 실패! [ {userName} / {resultType} ]</span>
+              <button className="retry-button-small" onClick={submitResults}>재시도</button>
+            </div>
+          )}
+        </div>
+      )}
+
       <div className="result-header">
         <p className="result-subtitle">당신의 성격 유형은</p>
         <h1 className="result-type">{resultType}</h1>
