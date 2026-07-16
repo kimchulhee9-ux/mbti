@@ -5,9 +5,8 @@ import './ResultScreen.css';
 // ==========================================
 // 📊 구글 스프레드시트 연동 설정
 // ==========================================
-// 구글 스프레드시트 배포 후 발급받은 웹 앱 URL을 아래 작은따옴표 사이에 넣어주세요.
-// 예: const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxxxx.../exec';
-const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycb4po_P3u2BZ9Q_rKqkhv51KjE9bcY9GW5BaRXV1le0mNxBYQiQhBDUDGxXxL7pwqgzjQ/exec';
+// .env 파일의 VITE_GOOGLE_SHEETS_WEB_APP_URL 값을 읽어옵니다.
+const GOOGLE_SHEETS_WEB_APP_URL = import.meta.env.VITE_GOOGLE_SHEETS_WEB_APP_URL || '';
 
 function ResultScreen({ resultType, scores, onRestart, userName }) {
   const resultData = results[resultType];
@@ -63,7 +62,13 @@ function ResultScreen({ resultType, scores, onRestart, userName }) {
 
   return (
     <div className="result-screen fade-in" style={{ '--theme-color': resultData.color }}>
-      {GOOGLE_SHEETS_WEB_APP_URL && !GOOGLE_SHEETS_WEB_APP_URL.includes('YOUR_GOOGLE_SHEETS_WEB_APP_URL_HERE') && (
+      {!GOOGLE_SHEETS_WEB_APP_URL ? (
+        <div className="submission-status-bar error">
+          <div className="status-content">
+            <span>⚠️ 구글 스프레드시트 연동 URL이 설정되지 않아 데이터가 저장되지 않습니다. (.env 설정 필요)</span>
+          </div>
+        </div>
+      ) : (
         <div className={`submission-status-bar ${submitStatus}`}>
           {submitStatus === 'submitting' && (
             <div className="status-content">
