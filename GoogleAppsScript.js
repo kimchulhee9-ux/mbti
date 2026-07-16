@@ -14,7 +14,8 @@ function doPost(e) {
     
     // 시트 이름 설정 ('mbti_01')
     var sheetName = "mbti_01";
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    // 스프레드시트 ID를 사용하여 확실하게 객체를 가져옵니다.
+    var ss = SpreadsheetApp.openById("1X3WvOu2g2of-12KGBGNCM16vg41q7d2GB0K7bnDmpSQ");
     var sheet = ss.getSheetByName(sheetName);
     
     // 시트가 없으면 새로 생성
