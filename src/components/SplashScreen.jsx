@@ -3,7 +3,7 @@ import './SplashScreen.css';
 import splashHero from '../assets/mbti_splash_hero.png';
 
 // 수동으로 참여코드를 변경하려면 아래 4자리 숫자를 수정하세요.
-const PARTICIPATION_CODE = '5858';
+const PARTICIPATION_CODE = '5555';
 
 function SplashScreen({ onUnlock }) {
   const [code, setCode] = useState('');
