@@ -4,7 +4,7 @@ import splashHero from '../assets/compass_hero.svg';
 
 // 수동으로 참여코드를 변경하려면 아래 4자리 숫자를 수정하세요.
 // (교육이 끝나면 숫자를 바꿔서 더 이상 접속할 수 없게 할 수 있습니다)
-const PARTICIPATION_CODE = '1234';
+const PARTICIPATION_CODE = '5555';
 
 function SplashScreen({ onUnlock }) {
   const [code, setCode] = useState('');
