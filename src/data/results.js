@@ -1,6 +1,6 @@
 export const results = {
   ISTJ: {
-    title: "세상의 소금형",
+    title: "성실한 등대지기형",
     description: "한 번 시작한 일은 끝까지 해내는 책임감이 강한 사람입니다. 신중하고 조용하며, 현실적이고 사실적입니다.",
     features: [
       "책임감이 강하고 약속을 잘 지킵니다.",
@@ -23,7 +23,7 @@ export const results = {
     badMatch: "INFP"
   },
   ISFJ: {
-    title: "임금 뒷편의 권력형",
+    title: "다정한 살림꾼형",
     description: "성실하고 온화하며 협조를 잘하는 사람입니다. 차분하고 친근하며 사람들의 감정을 잘 살핍니다.",
     features: [
       "남을 배려하고 챙겨주는 것을 좋아합니다.",
@@ -46,7 +46,7 @@ export const results = {
     badMatch: "ENTP"
   },
   INFJ: {
-    title: "예언자형",
+    title: "깊은 마음의 길잡이형",
     description: "사람과 관련된 뛰어난 통찰력을 가지고 있는 사람입니다. 직관력이 뛰어나며 인내심이 많고 조화롭습니다.",
     features: [
       "깊은 공감 능력을 가지고 있습니다.",
@@ -69,7 +69,7 @@ export const results = {
     badMatch: "ESTJ"
   },
   INTJ: {
-    title: "과학자형",
+    title: "멀리 보는 설계자형",
     description: "전체적인 부분을 조합하여 비전을 제시하는 사람입니다. 분석적이고 독창적이며 독립심이 강합니다.",
     features: [
       "효율성을 중시하고 논리적입니다.",
@@ -92,7 +92,7 @@ export const results = {
     badMatch: "ESFJ"
   },
   ISTP: {
-    title: "백과사전형",
+    title: "손재주 좋은 장인형",
     description: "논리적이고 뛰어난 상황 적응력을 가지고 있는 사람입니다. 과묵하며 관찰력이 뛰어나고 객관적입니다.",
     features: [
       "손재주가 좋고 도구를 잘 다룹니다.",
@@ -115,7 +115,7 @@ export const results = {
     badMatch: "INFP"
   },
   ISFP: {
-    title: "성인군자형",
+    title: "소박한 예술가형",
     description: "따뜻한 감성을 가지고 있는 겸손한 사람입니다. 다정하고 온화하며 친절하고 연기력이 뛰어납니다.",
     features: [
       "현재를 즐기며 자유를 추구합니다.",
@@ -138,7 +138,7 @@ export const results = {
     badMatch: "ENTJ"
   },
   INFP: {
-    title: "잔다르크형",
+    title: "따뜻한 이야기꾼형",
     description: "이상적인 세상을 만들어 가는 사람입니다. 정열적이고 충실하며 낭만적이고 내적 신념이 깊습니다.",
     features: [
       "본인만의 가치관이 뚜렷합니다.",
@@ -161,7 +161,7 @@ export const results = {
     badMatch: "ESTJ"
   },
   INTP: {
-    title: "아이디어 뱅크형",
+    title: "궁리하는 학자형",
     description: "비평적인 관점을 가지고 있는 뛰어난 전략가입니다. 지적 호기심이 많고 조용하며 분석적입니다.",
     features: [
       "평범한 것을 거부하고 새로움을 찾습니다.",
@@ -184,7 +184,7 @@ export const results = {
     badMatch: "ESFJ"
   },
   ESTP: {
-    title: "수완좋은 활동가형",
+    title: "활기찬 해결사형",
     description: "친구, 운동, 음식 등 다양한 활동을 선호하는 사람입니다. 관대하고 느긋하며 문제 해결에 능숙합니다.",
     features: [
       "스릴을 즐기고 도전을 좋아합니다.",
@@ -207,7 +207,7 @@ export const results = {
     badMatch: "INFP"
   },
   ESFP: {
-    title: "사교적인 유형",
+    title: "흥겨운 잔치꾼형",
     description: "분위기를 고조시키는 우호적이고 낙천적인 사람입니다. 사교적이고 활동적이며 수용력이 강합니다.",
     features: [
       "사람들을 좋아하고 어울리는 것을 즐깁니다.",
@@ -230,7 +230,7 @@ export const results = {
     badMatch: "INTJ"
   },
   ENFP: {
-    title: "스파크형",
+    title: "호기심 많은 여행가형",
     description: "열정적으로 새로운 관계를 만드는 사람입니다. 풍부한 상상력과 영감을 가지고 새로운 일을 시작합니다.",
     features: [
       "에너지가 넘치고 분위기 메이커입니다.",
@@ -253,7 +253,7 @@ export const results = {
     badMatch: "ISTJ"
   },
   ENTP: {
-    title: "발명가형",
+    title: "재치 있는 발명가형",
     description: "풍부한 상상력을 가지고 새로운 것에 도전하는 사람입니다. 민첩하고 독창적이며 넓은 안목을 가집니다.",
     features: [
       "토론을 즐기고 말을 조리 있게 잘합니다.",
@@ -276,7 +276,7 @@ export const results = {
     badMatch: "ISFJ"
   },
   ESTJ: {
-    title: "사업가형",
+    title: "든든한 기둥형",
     description: "사무적, 실용적, 현실적으로 일을 많이 하는 사람입니다. 구체적이고 현실적이며 사실적입니다.",
     features: [
       "리더십이 있고 조직을 잘 이끕니다.",
@@ -299,7 +299,7 @@ export const results = {
     badMatch: "INFP"
   },
   ESFJ: {
-    title: "친선도모형",
+    title: "정 많은 이웃사촌형",
     description: "친절하고 현실감을 바탕으로 타인에게 봉사하는 사람입니다. 동정심이 많고 동료애가 많습니다.",
     features: [
       "타인에게 인정받는 것을 좋아합니다.",
@@ -322,7 +322,7 @@ export const results = {
     badMatch: "INTP"
   },
   ENFJ: {
-    title: "언변능숙형",
+    title: "사람을 잇는 다리형",
     description: "타인의 성장을 도모하고 협동하는 사람입니다. 따뜻하고 적극적이며 책임감이 강합니다.",
     features: [
       "사람들을 이끄는 부드러운 카리스마가 있습니다.",
@@ -345,7 +345,7 @@ export const results = {
     badMatch: "ISTP"
   },
   ENTJ: {
-    title: "지도자형",
+    title: "앞장서는 선장형",
     description: "비전을 가지고 사람들을 활력 있게 이끌어가는 사람입니다. 열성적이고 솔직하며 단호합니다.",
     features: [
       "타고난 리더이며 결단력이 있습니다.",

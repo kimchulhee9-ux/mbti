@@ -20,8 +20,15 @@
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .status-content {
@@ -62,7 +69,9 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .retry-button-small {
@@ -100,7 +109,7 @@
   color: var(--theme-color, var(--primary-color));
   line-height: 1;
   margin-bottom: 8px;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.05);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
 }
 
 .result-title {
@@ -220,7 +229,7 @@
 }
 
 .future-careers-section {
-  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(245,245,245,0.95));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 245, 245, 0.95));
   border-radius: var(--radius-lg);
   padding: 24px 20px;
   margin-bottom: 24px;
@@ -247,7 +256,7 @@
   background-color: #fff;
   border-radius: var(--radius-md);
   padding: 12px 14px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
   border: 1.5px solid transparent;
   transition: border-color 0.2s, transform 0.2s;
 }
@@ -330,4 +339,36 @@
 
 .restart-button:active {
   transform: translateY(1px);
+}
+/* 마음자리 나침반: 유형 이름(한글)용 크기 조정 */
+.result-type.result-type-name {
+  font-size: 2.2rem;
+  line-height: 1.25;
+  word-break: keep-all;
+}
+
+.match-type {
+  font-size: 1.1rem;
+  word-break: keep-all;
+}
+
+/* 유형 영문 표기 (가로) */
+.result-code {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  margin-right: -0.35em;
+  color: var(--theme-color, var(--primary-color));
+  opacity: 0.85;
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+.match-code {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;
+  color: var(--text-secondary, #777);
+  margin-top: 4px;
 }

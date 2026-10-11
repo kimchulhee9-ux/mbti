@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './StartScreen.css';
 
-function StartScreen({ onStart }) {
+function StartScreen({ onStart, questionCount = 40 }) {
   const [name, setName] = useState('');
   const [showWarning, setShowWarning] = useState(false);
 
@@ -24,7 +24,7 @@ function StartScreen({ onStart }) {
     <div className="start-screen fade-in">
       <div className="title-container">
         <h1>나의 진짜 모습은?</h1>
-        <p className="subtitle">심플하고 정확한 MBTI 성격 유형 검사</p>
+        <p className="subtitle">내 마음이 가리키는 방향을 찾아서</p>
         <p className="creator-text">- chulhee -</p>
       </div>
       
@@ -58,7 +58,7 @@ function StartScreen({ onStart }) {
 
       <div className="info">
         <p>⏱ 소요 시간: 약 3분</p>
-        <p>📝 총 40문항</p>
+        <p>📝 총 {questionCount}문항</p>
       </div>
 
       <button className="start-button" onClick={handleStartClick}>

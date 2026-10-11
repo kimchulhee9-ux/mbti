@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { questions } from '../data/questions';
+import { questions as defaultQuestions } from '../data/questions';
 import './QuestionScreen.css';
 
-function QuestionScreen({ onComplete, scores, setScores }) {
+function QuestionScreen({ onComplete, scores, setScores, questions = defaultQuestions }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animationClass, setAnimationClass] = useState('slide-in-right');
 

@@ -2,8 +2,8 @@
  * 구글 스프레드시트의 도구 > Apps Script에 붙여넣을 코드입니다.
  * 
  * 기능:
- * 1. React 앱에서 전송한 학생들의 MBTI 결과를 수신합니다.
- * 2. 'mbti_01' 시트에 제출 시간, 이름, MBTI 결과 및 세부 점수를 저장합니다.
+ * 1. React 앱에서 전송한 참여자의 성향 검사 결과를 수신합니다.
+ * 2. 'mbti_01' 시트에 제출 시간, 이름, 성향 유형, 세부 점수, 그룹(학생/학부모/시니어), 유형 이름을 저장합니다.
  * 3. 시트가 없을 경우 자동으로 생성하고 첫 행에 제목(헤더)을 추가합니다.
  */
 
@@ -28,15 +28,17 @@ function doPost(e) {
       sheet.appendRow([
         "제출 시간", 
         "이름", 
-        "MBTI 결과", 
-        "E (외향)", 
-        "I (내향)", 
-        "S (감각)", 
-        "N (직관)", 
-        "T (사고)", 
-        "F (감정)", 
-        "J (판단)", 
-        "P (인식)"
+        "성향 유형(코드)", 
+        "E (어울림)", 
+        "I (고요함)", 
+        "S (경험)", 
+        "N (상상)", 
+        "T (이치)", 
+        "F (마음)", 
+        "J (계획)", 
+        "P (흐름)",
+        "그룹",
+        "유형 이름"
       ]);
     }
     
@@ -57,7 +59,9 @@ function doPost(e) {
       scores.T || 0,
       scores.F || 0,
       scores.J || 0,
-      scores.P || 0
+      scores.P || 0,
+      data.group || "",
+      data.typeName || ""
     ];
     
     sheet.appendRow(rowData);
@@ -75,5 +79,5 @@ function doPost(e) {
 
 // 스크립트 연결 확인용 GET 핸들러
 function doGet(e) {
-  return ContentService.createTextOutput("MBTI 구글 앱스 스크립트가 정상 동작 중입니다.");
+  return ContentService.createTextOutput("마음자리 나침반 구글 앱스 스크립트가 정상 동작 중입니다.");
 }

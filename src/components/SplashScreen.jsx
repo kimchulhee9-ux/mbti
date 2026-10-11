@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './SplashScreen.css';
-import splashHero from '../assets/mbti_splash_hero.png';
+import splashHero from '../assets/compass_hero.svg';
 
-// 수동으로 참여코드를 변경하려면 아래 4자리 숫자를 수정하세요.
-const PARTICIPATION_CODE = '5858';
+// 그룹별 참여코드 (4자리 숫자를 바꾸면 코드가 바뀝니다)
+// student: 학생 / parent: 학부모 / senior: 시니어
+const PARTICIPATION_CODES = {
+  '1111': 'student',
+  '2222': 'parent',
+  '1004': 'senior',
+};
 
 function SplashScreen({ onUnlock }) {
   const [code, setCode] = useState('');
@@ -16,10 +21,11 @@ function SplashScreen({ onUnlock }) {
     setCode(newCode);
 
     if (newCode.length === 4) {
-      if (newCode === PARTICIPATION_CODE) {
+      const group = PARTICIPATION_CODES[newCode];
+      if (group) {
         setStatus('success');
         setTimeout(() => {
-          onUnlock();
+          onUnlock(group);
         }, 1000);
       } else {
         setStatus('error');
@@ -62,7 +68,7 @@ function SplashScreen({ onUnlock }) {
   return (
     <div className="splash-screen fade-in">
       <div className="splash-header">
-        <h1 className="splash-title">간편 MBTI</h1>
+        <h1 className="splash-title">마음자리 나침반</h1>
         <p className="splash-subtitle">- Chulhee -</p>
       </div>
 
@@ -70,7 +76,7 @@ function SplashScreen({ onUnlock }) {
         <img 
           src={splashHero} 
           className="splash-illustration" 
-          alt="MBTI Splash Illustration" 
+          alt="마음자리 나침반" 
         />
       </div>
 
