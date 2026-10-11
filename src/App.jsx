@@ -9,7 +9,7 @@ import './App.css';
 function App() {
   const [currentScreen, setCurrentScreen] = useState('splash'); // 'splash', 'start', 'question', 'result'
   const [userName, setUserName] = useState('');
-  const [group, setGroup] = useState('student'); // 'student', 'parent', 'senior' (참여코드로 결정)
+  const [group, setGroup] = useState(''); // 'student', 'parent', 'senior' (시작 화면에서 선택)
   const [scores, setScores] = useState({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
   const [finalScores, setFinalScores] = useState({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
   const [mbtiResult, setMbtiResult] = useState('');
@@ -17,8 +17,9 @@ function App() {
   // 시니어는 20문항, 학생·학부모는 40문항
   const activeQuestions = group === 'senior' ? seniorQuestions : questions;
 
-  const startTest = (name) => {
+  const startTest = (name, selectedGroup) => {
     setUserName(name);
+    setGroup(selectedGroup);
     setScores({ E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 });
     setCurrentScreen('question');
   };
@@ -38,13 +39,14 @@ function App() {
 
   const restartTest = () => {
     setUserName('');
+    setGroup('');
     setCurrentScreen('start');
   };
 
   return (
     <div className="app-container">
-      {currentScreen === 'splash' && <SplashScreen onUnlock={(g) => { setGroup(g || 'student'); setCurrentScreen('start'); }} />}
-      {currentScreen === 'start' && <StartScreen onStart={startTest} questionCount={activeQuestions.length} />}
+      {currentScreen === 'splash' && <SplashScreen onUnlock={() => setCurrentScreen('start')} />}
+      {currentScreen === 'start' && <StartScreen onStart={startTest} initialGroup={group} />}
       {currentScreen === 'question' && (
         <QuestionScreen
           onComplete={handleTestComplete}
