@@ -1,17 +1,31 @@
 import React, { useState } from 'react';
+import { questions, seniorQuestions } from '../data/questions';
 import './StartScreen.css';
 
-function StartScreen({ onStart, questionCount = 40 }) {
+const GROUP_OPTIONS = [
+  { key: 'student', label: '학생', icon: '🎒' },
+  { key: 'parent', label: '학부모', icon: '👨‍👩‍👧' },
+  { key: 'senior', label: '시니어', icon: '🌿' },
+];
+
+function StartScreen({ onStart, initialGroup = '' }) {
   const [name, setName] = useState('');
+  const [group, setGroup] = useState(initialGroup);
   const [showWarning, setShowWarning] = useState(false);
+  const [showGroupWarning, setShowGroupWarning] = useState(false);
+
+  const questionCount = group === 'senior' ? seniorQuestions.length : questions.length;
 
   const handleStartClick = () => {
     const trimmedName = name.trim();
+    if (!group) {
+      setShowGroupWarning(true);
+    }
     if (!trimmedName) {
       setShowWarning(true);
-      return;
     }
-    onStart(trimmedName);
+    if (!group || !trimmedName) return;
+    onStart(trimmedName, group);
   };
 
   const handleKeyPress = (e) => {
@@ -32,6 +46,29 @@ function StartScreen({ onStart, questionCount = 40 }) {
         <div className="circle circle-1"></div>
         <div className="circle circle-2"></div>
         <div className="circle circle-3"></div>
+      </div>
+
+      <div className="group-select-container">
+        <p className="name-label">나는 누구인가요?</p>
+        <div className="group-buttons">
+          {GROUP_OPTIONS.map((g) => (
+            <button
+              key={g.key}
+              type="button"
+              className={`group-button ${group === g.key ? 'selected' : ''}`}
+              onClick={() => {
+                setGroup(g.key);
+                setShowGroupWarning(false);
+              }}
+            >
+              <span className="group-icon">{g.icon}</span>
+              <span>{g.label}</span>
+            </button>
+          ))}
+        </div>
+        {showGroupWarning && !group && (
+          <p className="warning-text">학생 / 학부모 / 시니어 중 하나를 골라주세요.</p>
+        )}
       </div>
 
       <div className="name-input-container">

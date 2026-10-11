@@ -2,13 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './SplashScreen.css';
 import splashHero from '../assets/compass_hero.svg';
 
-// 그룹별 참여코드 (4자리 숫자를 바꾸면 코드가 바뀝니다)
-// student: 학생 / parent: 학부모 / senior: 시니어
-const PARTICIPATION_CODES = {
-  '1111': 'student',
-  '2222': 'parent',
-  '1004': 'senior',
-};
+// 수동으로 참여코드를 변경하려면 아래 4자리 숫자를 수정하세요.
+// (교육이 끝나면 숫자를 바꿔서 더 이상 접속할 수 없게 할 수 있습니다)
+const PARTICIPATION_CODE = '1234';
 
 function SplashScreen({ onUnlock }) {
   const [code, setCode] = useState('');
@@ -21,11 +17,10 @@ function SplashScreen({ onUnlock }) {
     setCode(newCode);
 
     if (newCode.length === 4) {
-      const group = PARTICIPATION_CODES[newCode];
-      if (group) {
+      if (newCode === PARTICIPATION_CODE) {
         setStatus('success');
         setTimeout(() => {
-          onUnlock(group);
+          onUnlock();
         }, 1000);
       } else {
         setStatus('error');
